@@ -13,6 +13,18 @@ class PokemonDetailVc: UIViewController {
     var pokemon:Pokemon!
     
     @IBOutlet weak var pokemonName: UILabel!
+    @IBOutlet weak var mainImg: UIImageView!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    @IBOutlet weak var typeLbl: UILabel!
+    @IBOutlet weak var defenseLbl: UILabel!
+    @IBOutlet weak var heightLbl: UILabel!
+    @IBOutlet weak var pokedexIdLbl: UILabel!
+    @IBOutlet weak var weightLbl: UILabel!
+    @IBOutlet weak var baseattackLbl: UILabel!
+    @IBOutlet weak var currentevoImg: UIImageView!
+    @IBOutlet weak var nextevoImg: UIImageView!
+    @IBOutlet weak var evoLbl: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +38,11 @@ class PokemonDetailVc: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backBtnPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true
+            , completion: nil)
+    
+    }
 
 
 
