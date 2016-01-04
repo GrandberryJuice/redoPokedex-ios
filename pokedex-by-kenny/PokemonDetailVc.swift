@@ -50,6 +50,7 @@ class PokemonDetailVc: UIViewController {
         nextevoImg.image = UIImage(named:pokemon.nextEvolutionId)
         weightLbl.text = pokemon.weight
         baseattackLbl.text = pokemon.attack
+        
     
         if pokemon.nextEvolutionId == "" {
             evoLbl.text = "No Evolutions"
@@ -58,6 +59,7 @@ class PokemonDetailVc: UIViewController {
             nextevoImg.hidden = false
             nextevoImg.image = UIImage(named: pokemon.nextEvolutionId)
             var str = "Next Evolution: \(pokemon.nextEvolutionTxt)"
+            evoLbl.text = str
             
             if pokemon.nextEvolutionLvl != "" {
                 str += " -LVL \(pokemon.nextEvolutionLvl)"

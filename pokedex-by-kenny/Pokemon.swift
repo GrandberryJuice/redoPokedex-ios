@@ -24,9 +24,7 @@ class Pokemon {
     private var _pokemonUrl:String!
     private var _nextEvolutionLvl:String!
     
-//    var nextEvolutionTxt: String {
-//        return _nextEvolutionTxt
-//    }
+
     
     var nextEvolutionLvl: String {
         get {
@@ -140,6 +138,7 @@ class Pokemon {
                 print(self._defense)
                 
                 if let types = dict["types"] as? [Dictionary<String, String>] where types.count > 0 {
+                    print(types.debugDescription)
                     if let name = types[0]["name"] {
                         self._type = name.capitalizedString
                     }
@@ -150,10 +149,13 @@ class Pokemon {
                                 self._type! += "/\(name.capitalizedString)"
                             }
                         }
-                    } else {
-                        self._type = ""
                     }
+                } else {
+                    self._type = ""
+                }
+                
                     print(self._type)
+                    
                     
                     if let descArr = dict["descriptions"] as? [Dictionary<String, String>] where descArr.count > 0 {
                         
@@ -193,9 +195,9 @@ class Pokemon {
                                     if let lvl = evolutions[0]["level"] as? Int {
                                         self._nextEvolutionLvl = "\(lvl)"
                                     }
-                                    print(self._nextEvolutionId)
-                                    print(self._nextEvolutionTxt)
-                                    print(self._nextEvolutionLvl)
+//                                    print(self._nextEvolutionId)
+//                                    print(self._nextEvolutionTxt)
+//                                    print(self._nextEvolutionLvl)
                                 }
                             }
                         }
@@ -204,4 +206,3 @@ class Pokemon {
             }
         }
     }
-}
